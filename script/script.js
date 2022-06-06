@@ -4,6 +4,8 @@
  *
  *    PIG GAME (ROLE DICE)
  *
+ * By Alexander Pekker
+ *
  *
  */
 
@@ -133,7 +135,7 @@ const holdClickHandler = (event) => {
 
 const rollDiceClickHandle = (event) => {
     dice = roleDice();
-    diceImg.src = `/img/dice-${dice}.png`;
+    diceImg.src = `../img/dice-${dice}.png`;
     removeClass(diceImg, 'hidden');
 
     if (dice === 1) {
