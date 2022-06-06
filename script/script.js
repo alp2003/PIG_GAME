@@ -74,7 +74,7 @@ const switchToPlayer = (player, playerScore) => {
         removeClass(player2Section, 'player--active');
         addClass(player1Section, 'player--active');
         player2ScoreP.textContent = String(
-            playerScore !== 0 ? playerScore : player2ScoreP.textContent
+            +player2ScoreP.textContent + playerScore
         );
         player2CurrentScoreP.textContent = 0;
     } else if (player === 2) {
@@ -82,7 +82,7 @@ const switchToPlayer = (player, playerScore) => {
         removeClass(player1Section, 'player--active');
         addClass(player2Section, 'player--active');
         player1ScoreP.textContent = String(
-            playerScore !== 0 ? playerScore : player1ScoreP.textContent
+            +player1ScoreP.textContent + playerScore
         );
         player1CurrentScoreP.textContent = 0;
     }
@@ -119,7 +119,7 @@ const holdClickHandler = (event) => {
             setWinnerPlayer(player1Section, player1score);
         } else {
             // Switch PLayer 2
-            switchToPlayer(2, player1score);
+            switchToPlayer(2, currentScore);
         }
     } else if (whoIsPlaying === 2) {
         player2score += currentScore;
@@ -128,7 +128,7 @@ const holdClickHandler = (event) => {
             setWinnerPlayer(player2Section, player2score);
         } else {
             // Switch PLayer 1
-            switchToPlayer(1, player2score);
+            switchToPlayer(1, currentScore);
         }
     }
 };
